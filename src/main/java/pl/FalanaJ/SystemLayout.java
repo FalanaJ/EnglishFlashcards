@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.*;
 
 public class SystemLayout {
-    static JFrame frame = new JFrame("Flashcards Game 1.1");
+    static JFrame frame = new JFrame("Flashcards Game 1.3");
     static JPanel gamePanel = new JPanel();
     static JPanel displayWordToGuessPanel = new JPanel();
     static Map<String, String> fiszki = new LinkedHashMap<>();
@@ -21,13 +21,19 @@ public class SystemLayout {
     static final JLabel InfoAfterAllWords = new JLabel("[W tym miejscu poznasz końcowy wynik]");
     static final JButton ExitButton = new JButton("Zakończ");
     static int score = 0;
-    static int wordsNumber = 0;
+    static int wordsCounter = 0;
+    static int wordsNumber = 1;
     public static void main(String[] args) throws IOException {
         GameLogic gameLogic = new GameLogic();
-        BufferedReader bufferedReaderFile = new BufferedReader(new FileReader("MyEnglishWords.txt"));
+
+        try {
+            BufferedReader bufferedReaderFile = new BufferedReader(new FileReader("MyEnglishWords.txt"));
+            gameLogic.loadWordsFromFile(bufferedReaderFile);
+        } catch (FileNotFoundException e){
+            ViewController.FileNotFound();
+        }
 
         ViewController.setAppView();
-        gameLogic.loadWordsFromFile(bufferedReaderFile);
         GuessPlace.addKeyListener(new KeyListener() {
             public void keyTyped(KeyEvent e) {}
             @Override
@@ -36,13 +42,10 @@ public class SystemLayout {
             }
             public void keyReleased(KeyEvent e) {}
         });
+
         StartButton.addActionListener(e -> gameLogic.startButtonMethods());
         SubmitButton.addActionListener(e -> gameLogic.submitButtonMethods());
         ExitButton.addActionListener(e -> System.exit(0));
-        bufferedReaderFile.close();
         gameLogic.closeMethods();
     }
 }
-
-
-//TODO co gdy program nie znajdzie pliku ze słówkami

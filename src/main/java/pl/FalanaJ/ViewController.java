@@ -51,4 +51,25 @@ public class ViewController {
         ExitButton.setPreferredSize(new Dimension(300, 50));
         ExitButton.setFont(new Font("Arial", Font.PLAIN, 20));
     }
+    public static void FileNotFound(){
+        frame.setSize(700, 350);
+        frame.setLayout(new FlowLayout());
+        frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+
+        Color gamePanelColor = new Color(0x2DA6A1);
+        Color displayWordToGuessPanelColor = new Color(0x048884);
+
+        gamePanel.setBackground(gamePanelColor);
+        gamePanel.setPreferredSize(new Dimension(700, 350));
+
+        displayWordToGuessPanel.setBackground(displayWordToGuessPanelColor);
+        gamePanel.add(displayWordToGuessPanel);
+        displayWordToGuessPanel.add(InfoWithWordToWrite);
+        InfoWithWordToWrite.setPreferredSize(new Dimension(550, 50));
+        InfoWithWordToWrite.setFont(new Font("Arial", Font.BOLD, 20));
+        InfoWithWordToWrite.setText("PLIK ZE SŁÓWKAMI NIE ZOSTAŁ ZNALEZIONY [!!!]");
+        StartButton.setEnabled(false);
+    }
 }

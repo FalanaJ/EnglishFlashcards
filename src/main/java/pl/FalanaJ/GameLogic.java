@@ -18,14 +18,13 @@ public class GameLogic {
 
             InfoAfterButtonClick.setText(ShowAfterBtnAnswerList.get(random.nextInt(ShowAfterBtnAnswerList.size())));
             score++;
-            wordsNumber++;
+            wordsCounter++;
         }
         else{
             InfoAfterButtonClick.setText("Niestety to nie to słowo.. Odpowiedź to: " + englishWord);
-            wordsNumber++;
+            wordsCounter++;
         }
     }
-
     public void submitButtonMethods(){
         Map.Entry<String, String> entry = fiszki.entrySet().iterator().next();
         String polishWord = entry.getKey();
@@ -37,47 +36,44 @@ public class GameLogic {
         if (!fiszki.isEmpty()) getNextWord();
         else gameOver();
     }
-
     public void startButtonMethods(){
         SubmitButton.setEnabled(true);
         GuessPlace.setEnabled(true);
         String firstKey = fiszki.keySet().iterator().next();
-        InfoWithWordToWrite.setText(firstKey);
+        InfoWithWordToWrite.setText(wordsNumber + ". " + firstKey);
         InfoAfterAllWords.setText("");
         InfoAfterButtonClick.setText("");
         StartButton.setEnabled(false);
     }
-
     public void gameOver(){
         InfoWithWordToWrite.setText("To już wszystkie słowa!");
         GuessPlace.setEnabled(false);
         SubmitButton.setEnabled(false);
 
-        if(score == wordsNumber) InfoAfterAllWords.setText("GRATULACJE Twój wynik to: " + score + "/" + wordsNumber);
-        else InfoAfterAllWords.setText("Twój wynik to: " + score + "/" + wordsNumber);
+        if(score == wordsCounter) InfoAfterAllWords.setText("GRATULACJE Twój wynik to: " + score + "/" + wordsCounter);
+        else InfoAfterAllWords.setText("Twój wynik to: " + score + "/" + wordsCounter);
 
         StartButton.setText("Restartuj");
         StartButton.setEnabled(true);
+        GuessPlace.setText("");
 
         fiszki.putAll(fiszkiForRestart);
         StartButton.addActionListener(e -> startButtonMethods());
-        score = 0;
-        wordsNumber = 0;
+        score = wordsCounter = 0;
+        wordsNumber = 1;
     }
-
     public void getNextWord(){
         Map.Entry<String, String> nextEntry = fiszki.entrySet().iterator().next();
         String nextPolishWord = nextEntry.getKey();
 
-        InfoWithWordToWrite.setText(nextPolishWord);
+        wordsNumber++;
+        InfoWithWordToWrite.setText(wordsNumber + ". " + nextPolishWord);
         GuessPlace.setText("");
     }
-
     public void closeMethods(){
         frame.add(gamePanel);
         frame.setVisible(true);
     }
-
     public void loadWordsFromFile(BufferedReader bufferedReaderFile) throws IOException {
         String line;
         while ((line = bufferedReaderFile.readLine()) != null) {
