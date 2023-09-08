@@ -40,6 +40,7 @@ public class GameLogic {
 
     public void startButtonMethods(){
         SubmitButton.setEnabled(true);
+        GuessPlace.setEnabled(true);
         String firstKey = fiszki.keySet().iterator().next();
         InfoWithWordToWrite.setText(firstKey);
         InfoAfterAllWords.setText("");
@@ -54,9 +55,17 @@ public class GameLogic {
 
         if(score == wordsNumber) InfoAfterAllWords.setText("GRATULACJE Twój wynik to: " + score + "/" + wordsNumber);
         else InfoAfterAllWords.setText("Twój wynik to: " + score + "/" + wordsNumber);
+
+        StartButton.setText("Restartuj");
+        StartButton.setEnabled(true);
+
+        fiszki.putAll(fiszkiForRestart);
+        StartButton.addActionListener(e -> startButtonMethods());
+        score = 0;
+        wordsNumber = 0;
     }
 
-    public  void getNextWord(){
+    public void getNextWord(){
         Map.Entry<String, String> nextEntry = fiszki.entrySet().iterator().next();
         String nextPolishWord = nextEntry.getKey();
 
@@ -78,6 +87,7 @@ public class GameLogic {
                 String value = parts[1].trim();
 
                 fiszki.put(key, value);
+                fiszkiForRestart.put(key, value);
             }
         }
     }

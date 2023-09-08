@@ -27,16 +27,13 @@ public class ViewController {
 
         gamePanel.add(GuessPlace);
         GuessPlace.setPreferredSize(new Dimension(550, 30));
+        GuessPlace.setEnabled(false);
         GuessPlace.setFont(new Font("Arial", Font.PLAIN, 20));
 
         gamePanel.add(SubmitButton);
         SubmitButton.setPreferredSize(new Dimension(300, 50));
         SubmitButton.setEnabled(false);
         SubmitButton.setFont(new Font("Arial", Font.PLAIN, 20));
-
-        gamePanel.add(StartButton);
-        StartButton.setPreferredSize(new Dimension(300, 50));
-        StartButton.setFont(new Font("Arial", Font.PLAIN, 20));
 
         gamePanel.add(InfoAfterButtonClick);
         InfoAfterButtonClick.setPreferredSize(new Dimension(550, 25));
@@ -45,5 +42,13 @@ public class ViewController {
         gamePanel.add(InfoAfterAllWords);
         InfoAfterAllWords.setPreferredSize(new Dimension(550, 25));
         InfoAfterAllWords.setFont(new Font("Arial", Font.BOLD, 20));
+
+        gamePanel.add(StartButton);
+        StartButton.setPreferredSize(new Dimension(300, 50));
+        StartButton.setFont(new Font("Arial", Font.PLAIN, 20));
+
+        gamePanel.add(ExitButton);
+        ExitButton.setPreferredSize(new Dimension(300, 50));
+        ExitButton.setFont(new Font("Arial", Font.PLAIN, 20));
     }
 }
