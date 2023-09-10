@@ -1,11 +1,13 @@
 # English Flashcards Game
 
 **Description**
+
 I would like to show you my application for learning English words.  I spent 3 solid days working on it, but I think it was worth it because I will definitely use it during the academic year.
 
 As you can see, the application is in sea colors, so calm and pleasant to the eye, the first photo shows how everything is described to a new user so that he knows what is going on.
 
-[This is place for photo1]
+![image](https://github.com/FalanaJ/EnglishFlashcardsGame/assets/120061368/4b2a1954-e6e4-40d4-80b4-ff4721d7831d)
+
 
 The next ones show the operation of the program itself - we enter the word in English below its Polish equivalent and press the "Confirm answer" button OR press the ENTER button, which I am very proud of because it makes it much easier for someone who wants to go through it quickly.
 
