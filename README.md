@@ -17,7 +17,7 @@ Below it will be displayed whether we are right or wrong, if not, the correct fo
 
 ![image](https://github.com/FalanaJ/EnglishFlashcardsGame/assets/120061368/8fbba7e1-92bf-48c2-96c7-9855631e0546)
 
-To add your words to learn you have to modify MyEnglishWords.txt file and write words in [ {polishword}, {englishword} ] schema.
+To add your words to learn you have to modify MyEnglishWords.txt file and write words like on the photo below.
 
 ![image](https://github.com/FalanaJ/EnglishFlashcardsGame/assets/120061368/c9bc5c1c-8e8c-47b2-bf89-a700093b6d24)
 
