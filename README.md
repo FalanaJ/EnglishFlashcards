@@ -4,6 +4,18 @@
 
 I would like to show you my application for learning English words. I'm very pround of this app since ti will help me during my academic year
 
+**Prerequisites**
+-   Java Development Kit (JDK) 17 or later
+
+**Configuration** 
+
+ 1. Clone the repository to your local machine
+    git clone https://github.com/FalanaJ/EnglishFlashcardsGame.git
+    
+2. Run the application
+
+**Usage**
+
 As you can see, the application is in sea colors, so calm and pleasant to the eye, the first photo shows how everything is described to a new user so that he knows what is going on.
 
 ![app1](EFCGPhotos/app1.png)
