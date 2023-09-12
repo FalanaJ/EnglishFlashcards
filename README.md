@@ -2,7 +2,7 @@
 
 **Description**
 
-I would like to show you my application for learning English words. I'm very pround of this app since ti will help me during my academic year
+I would like to show you my java swing application for learning English words. I'm very pround of this app since it will help me during my academic year.
 
 **Prerequisites**
 -   Java Development Kit (JDK) 17 or later
