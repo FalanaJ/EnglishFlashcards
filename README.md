@@ -2,13 +2,13 @@
 
 **Description**
 
-I would like to show you my application for learning English words.  I spent 3 solid days working on it, but I think it was worth it because I will definitely use it during the academic year.
+I would like to show you my application for learning English words. I'm very pround of this app since ti will help me during my academic year
 
 As you can see, the application is in sea colors, so calm and pleasant to the eye, the first photo shows how everything is described to a new user so that he knows what is going on.
 
 ![app1](EFCGPhotos/app1.png)
 
-The next ones show the operation of the program itself - we enter the word in English below its Polish equivalent and press the "Confirm answer" button OR press the ENTER button, which I am very proud of because it makes it much easier for someone who wants to go through it quickly.
+The next ones show the operation of the program itself - we enter the word in English below its Polish equivalent and press the "Zatwierdź odpowiedź" button OR press the ENTER button, which I am very proud of because it makes it much easier for someone who wants to go through it quickly.
 
 ![app2](EFCGPhotos/app2.png)
 
@@ -18,9 +18,13 @@ Below it will be displayed whether we are right or wrong, if not, the correct fo
 
 ![app4](EFCGPhotos/app4.png)
 
-To add your words to learn you have to modify MyEnglishWords.txt file and write words like on the photo below.
+To add your words you have to modify MyEnglishWords.txt file and write words like on the photo below.
 
 ![mewtxt](EFCGPhotos/MEWTXT.png)
+
+This is a diagram that shows the arrangement of classes and methods in the application
+
+![diagram](EFCGPhotos/DiagramFlashcards.png)
 
 ## Author
 ### Jacob Falana
