@@ -51,7 +51,7 @@ public class ViewController {
         ExitButton.setPreferredSize(new Dimension(300, 50));
         ExitButton.setFont(new Font("Arial", Font.PLAIN, 20));
     }
-    public static void FileNotFound(){
+    public static void fileNotFound(){
         frame.setSize(700, 350);
         frame.setLayout(new FlowLayout());
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);

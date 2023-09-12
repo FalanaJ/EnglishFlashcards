@@ -3,11 +3,10 @@ package pl.FalanaJ;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.*;
-
 import static pl.FalanaJ.SystemLayout.*;
 
 public class GameLogic {
-    public static void checkYourAnswer(String englishWord, String polishWord){
+    public static void checkPlayerAnswer(String englishWord, String polishWord){
         InfoWithWordToWrite.setText(polishWord);
         String answer = GuessPlace.getText().toUpperCase();
         if(answer.equals(englishWord)){
@@ -18,25 +17,24 @@ public class GameLogic {
 
             InfoAfterButtonClick.setText(ShowAfterBtnAnswerList.get(random.nextInt(ShowAfterBtnAnswerList.size())));
             score++;
-            wordsCounter++;
         }
         else{
             InfoAfterButtonClick.setText("Niestety to nie to słowo.. Odpowiedź to: " + englishWord);
-            wordsCounter++;
         }
+        wordsCounter++;
     }
-    public void submitButtonMethods(){
+    public void submitButtonClick(){
         Map.Entry<String, String> entry = fiszki.entrySet().iterator().next();
         String polishWord = entry.getKey();
         String englishWord = entry.getValue();
 
-        checkYourAnswer(englishWord, polishWord);
+        checkPlayerAnswer(englishWord, polishWord);
         fiszki.remove(polishWord);
 
         if (!fiszki.isEmpty()) getNextWord();
         else gameOver();
     }
-    public void startButtonMethods(){
+    public void startButtonClick(){
         SubmitButton.setEnabled(true);
         GuessPlace.setEnabled(true);
         String firstKey = fiszki.keySet().iterator().next();
@@ -58,7 +56,7 @@ public class GameLogic {
         GuessPlace.setText("");
 
         fiszki.putAll(fiszkiForRestart);
-        StartButton.addActionListener(e -> startButtonMethods());
+        StartButton.addActionListener(e -> startButtonClick());
         score = wordsCounter = 0;
         wordsNumber = 1;
     }
@@ -70,7 +68,7 @@ public class GameLogic {
         InfoWithWordToWrite.setText(wordsNumber + ". " + nextPolishWord);
         GuessPlace.setText("");
     }
-    public void closeMethods(){
+    public void closeFunctions(){
         frame.add(gamePanel);
         frame.setVisible(true);
     }

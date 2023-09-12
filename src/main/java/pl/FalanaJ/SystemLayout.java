@@ -30,7 +30,7 @@ public class SystemLayout {
             BufferedReader bufferedReaderFile = new BufferedReader(new FileReader("MyEnglishWords.txt"));
             gameLogic.loadWordsFromFile(bufferedReaderFile);
         } catch (FileNotFoundException e){
-            ViewController.FileNotFound();
+            ViewController.fileNotFound();
         }
 
         ViewController.setAppView();
@@ -38,14 +38,14 @@ public class SystemLayout {
             public void keyTyped(KeyEvent e) {}
             @Override
             public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode() == KeyEvent.VK_ENTER) gameLogic.submitButtonMethods();
+                if(e.getKeyCode() == KeyEvent.VK_ENTER) gameLogic.submitButtonClick();
             }
             public void keyReleased(KeyEvent e) {}
         });
 
-        StartButton.addActionListener(e -> gameLogic.startButtonMethods());
-        SubmitButton.addActionListener(e -> gameLogic.submitButtonMethods());
+        StartButton.addActionListener(e -> gameLogic.startButtonClick());
+        SubmitButton.addActionListener(e -> gameLogic.submitButtonClick());
         ExitButton.addActionListener(e -> System.exit(0));
-        gameLogic.closeMethods();
+        gameLogic.closeFunctions();
     }
 }
