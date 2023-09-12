@@ -15,10 +15,10 @@ public class SystemLayout {
     static Map<String, String> fiszkiForRestart = new LinkedHashMap<>();
     static final JLabel InfoWithWordToWrite = new JLabel("[Tu będzie podane słowo do napisania po angielsku]");
     static final JButton SubmitButton = new JButton("Zatwierdź odpowiedź!");
-    static final TextField GuessPlace = new TextField("");
-    static final JLabel InfoAfterButtonClick = new JLabel("[Tutaj sprawdzamy twoją odpowiedź]");
+    public static final TextField GuessPlace = new TextField("");
+    public static final JLabel InfoAfterButtonClick = new JLabel("[Tutaj sprawdzamy twoją odpowiedź]");
     static final JButton StartButton = new JButton("Rozpocznij");
-    static final JLabel InfoAfterAllWords = new JLabel("[W tym miejscu poznasz końcowy wynik]");
+    public static final JLabel InfoAfterAllWords = new JLabel("[W tym miejscu poznasz końcowy wynik]");
     static final JButton ExitButton = new JButton("Zakończ");
     static int score = 0;
     static int wordsCounter = 0;

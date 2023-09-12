@@ -3,13 +3,14 @@ package pl.FalanaJ;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.*;
+
 import static pl.FalanaJ.SystemLayout.*;
 
 public class GameLogic {
-    public static void checkPlayerAnswer(String englishWord, String polishWord){
+    public void checkPlayerAnswer(String englishWord, String polishWord) {
         InfoWithWordToWrite.setText(polishWord);
         String answer = GuessPlace.getText().toUpperCase();
-        if(answer.equals(englishWord)){
+        if (answer.equals(englishWord)) {
 
             List<String> ShowAfterBtnAnswerList = new ArrayList<>
                     (Arrays.asList("Zgadza się!", "Dokładnie tak!", "Poprawna odpowiedź!", "Oczywiście, że tak!"));
@@ -17,13 +18,12 @@ public class GameLogic {
 
             InfoAfterButtonClick.setText(ShowAfterBtnAnswerList.get(random.nextInt(ShowAfterBtnAnswerList.size())));
             score++;
-        }
-        else{
+        } else {
             InfoAfterButtonClick.setText("Niestety to nie to słowo.. Odpowiedź to: " + englishWord);
         }
         wordsCounter++;
     }
-    public void submitButtonClick(){
+    public void submitButtonClick() {
         Map.Entry<String, String> entry = fiszki.entrySet().iterator().next();
         String polishWord = entry.getKey();
         String englishWord = entry.getValue();
@@ -34,7 +34,7 @@ public class GameLogic {
         if (!fiszki.isEmpty()) getNextWord();
         else gameOver();
     }
-    public void startButtonClick(){
+    public void startButtonClick() {
         SubmitButton.setEnabled(true);
         GuessPlace.setEnabled(true);
         String firstKey = fiszki.keySet().iterator().next();
@@ -43,12 +43,12 @@ public class GameLogic {
         InfoAfterButtonClick.setText("");
         StartButton.setEnabled(false);
     }
-    public void gameOver(){
+    public void gameOver() {
         InfoWithWordToWrite.setText("To już wszystkie słowa!");
         GuessPlace.setEnabled(false);
         SubmitButton.setEnabled(false);
 
-        if(score == wordsCounter) InfoAfterAllWords.setText("GRATULACJE Twój wynik to: " + score + "/" + wordsCounter);
+        if (score == wordsCounter) InfoAfterAllWords.setText("GRATULACJE Twój wynik to: " + score + "/" + wordsCounter);
         else InfoAfterAllWords.setText("Twój wynik to: " + score + "/" + wordsCounter);
 
         StartButton.setText("Restartuj");
@@ -60,7 +60,7 @@ public class GameLogic {
         score = wordsCounter = 0;
         wordsNumber = 1;
     }
-    public void getNextWord(){
+    public void getNextWord() {
         Map.Entry<String, String> nextEntry = fiszki.entrySet().iterator().next();
         String nextPolishWord = nextEntry.getKey();
 
@@ -68,7 +68,7 @@ public class GameLogic {
         InfoWithWordToWrite.setText(wordsNumber + ". " + nextPolishWord);
         GuessPlace.setText("");
     }
-    public void closeFunctions(){
+    public void closeFunctions() {
         frame.add(gamePanel);
         frame.setVisible(true);
     }
@@ -84,5 +84,20 @@ public class GameLogic {
                 fiszkiForRestart.put(key, value);
             }
         }
+    }
+
+    //methods for testing
+    public void getCorrectInfo(int score, int wordsCounter) {
+        if (score == wordsCounter) {
+            InfoAfterAllWords.setText("GRATULACJE Twój wynik to: " + score + "/" + wordsCounter);
+        } else {
+            InfoAfterAllWords.setText("Twój wynik to: " + score + "/" + wordsCounter);
+        }
+    }
+    public int getScore() {
+        return score;
+    }
+    public int getWordsCounter() {
+        return wordsCounter;
     }
 }
