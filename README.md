@@ -1,4 +1,4 @@
-# English Flashcards Game
+# English Flashcards
 
 **Description**
 
