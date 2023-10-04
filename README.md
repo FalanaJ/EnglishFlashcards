@@ -10,7 +10,7 @@ I would like to show you my java swing application for learning English words. I
 **Configuration** 
 
  1. Clone the repository to your local machine
-    git clone https://github.com/FalanaJ/EnglishFlashcardsGame.git
+    git clone https://github.com/FalanaJ/EnglishFlashcards.git
     
 2. Run the application
 
