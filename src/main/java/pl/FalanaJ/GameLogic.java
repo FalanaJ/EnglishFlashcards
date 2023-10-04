@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.*;
 
-import static pl.FalanaJ.SystemLayout.*;
+import static pl.FalanaJ.Main.*;
 
 public class GameLogic {
     public void checkPlayerAnswer(String englishWord, String polishWord) {

@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import pl.FalanaJ.GameLogic;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static pl.FalanaJ.SystemLayout.*;
+import static pl.FalanaJ.Main.*;
 
 public class GameLogicTest {
 

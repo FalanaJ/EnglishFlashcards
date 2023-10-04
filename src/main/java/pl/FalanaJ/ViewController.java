@@ -1,11 +1,22 @@
 package pl.FalanaJ;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
-import static pl.FalanaJ.SystemLayout.*;
+import static pl.FalanaJ.Main.*;
 
 public class ViewController {
     public static void setAppView(){
+
+        try {
+            BufferedImage iconImage = ImageIO.read(new File("images/logo.png"));
+            frame.setIconImage(iconImage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         frame.setSize(700, 350);
         frame.setLayout(new FlowLayout());
@@ -52,6 +63,7 @@ public class ViewController {
         ExitButton.setFont(new Font("Arial", Font.PLAIN, 20));
     }
     public static void fileNotFound(){
+
         frame.setSize(700, 350);
         frame.setLayout(new FlowLayout());
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
