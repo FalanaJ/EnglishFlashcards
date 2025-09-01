@@ -24,6 +24,7 @@ The next ones show the operation of the program itself - we enter the word in En
 
 ![app2](images/app2.png)
 
+
 ![app3](images/app3.png)
 
 Below it will be displayed whether we are right or wrong, if not, the correct form will be displayed.  There are buttons to exit the program and to reset after completing the approach.  Interestingly, the program will react when we do not put the file with our words into the appropriate folder and the system does not find it.  It won't let us just start approaching.
